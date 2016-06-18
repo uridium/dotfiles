@@ -1,0 +1,5 @@
+\set PROMPT1 '%[%033[1;35;40m%]%n@%`hostname`[%[%033[1;36;40m%] %/ %[%033[1;35;40m%]]%R%x%#%[%033[0m%] '
+\set HISTCONTROL ignoredups
+\set COMP_KEYWORD_CASE upper
+\pset null '[NULL]'
+\pset pager off
