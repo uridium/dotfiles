@@ -67,6 +67,9 @@ alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".d
 shopt -u mailwarn
 unset MAILCHECK
 
+# awscli command completion
+complete -C aws_completer aws
+
 # creating bash eternal history
 if [ ! -d $HOME/.bash_eternal_history ]; then
     install -m 700 -d $HOME/.bash_eternal_history
