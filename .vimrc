@@ -25,6 +25,9 @@ set number
 " zawsze pokazuj statusline
 set laststatus=2
 
+" zachowuje wciecia poprzedniej linii
+set autoindent
+
 " w ostatniej linii nie wyswietla @
 set display=lastline,uhex
 
@@ -83,7 +86,6 @@ let loaded_matchparen=1
 
 iab date# <C-R>=strftime("%Y%m%d %H:%M:%S")<CR>
 iab date822# <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
-iab datespec# <C-R>=system("echo \\* $(date +'%a %b %d %Y') 'Dariusz Lisiak <dariusz.l@webinterpret.com> -'")<CR>
 iab hostname# <C-R>=hostname()<CR>
 iab path# <C-R>=expand("%:p")<CR>
 iab pwd# <C-R>=expand("%:p:h")<CR>
@@ -125,19 +127,7 @@ nmap qw :wq<CR>
 nmap <Leader>c :let @/=""<CR>
 
 " zamyka buffer i przechodzi do poprzedniego
-nmap <Leader>bq :bp <Bar> bd #<CR>
-
-" minimalizacja i maksymalizacja splitowanych okien
-nmap <C-J> <C-W>j<C-W>_
-nmap <C-K> <C-W>k<C-W>_
-
-" minimalizacja i maksymalizacja vsplitowanych okien
-nmap <C-H> <C-W>h<C-W>\|
-nmap <C-L> <C-W>l<C-W>\|
-
-" przelaczanie horizontal/vertical split
-nmap <silent> <A-Left> :windo wincmd H<CR>
-nmap <silent> <A-Right> :windo wincmd K<CR>
+nmap <Leader>bd :bd!<CR>
 
 " formatowanie tekstu (kazda linia osobno)
 nmap Q :!fmt -s -w72<CR>
