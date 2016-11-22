@@ -1,16 +1,15 @@
 Dotfiles
 ---
 
-## Install:
+#### Install:
 ```bash
 git clone https://github.com/radar-aol-pl/dotfiles.git
 cd dotfiles
 ./files.sh install
 ```
 
-## Rollback:
+#### Rollback:
 ```bash
-git clone https://github.com/radar-aol-pl/dotfiles.git
 cd dotfiles
 ./files.sh rollback
 ```
