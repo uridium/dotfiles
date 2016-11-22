@@ -13,7 +13,7 @@ export LESS_TERMCAP_ue=$'\E[0m'             # End underlining
 export LESS_TERMCAP_us=$'\E[01;32m'         # Start underlining
 export LS_OPTIONS='--color=auto --hide-control-chars --classify'
 export PROMPT_COMMAND='echo $USER "$(history 1)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
-export PS1='\[\e[1;38;5;39m\]$(__git_ps1 "(%s) " 2>/dev/null)\[\e[1;38;5;40m\][ \t ] \[\e[1;38;5;178m\]\H:\[\e[1;38;5;40m\]\w\[\e[1;38;5;178m\]\$ \[\e[0m\]'
+export PS1='\[\e[1;38;5;39m\]$(__git_ps1 "(%s) " 2>/dev/null)\[\e[1;38;5;40m\][ \t ] \[\e[1;38;5;099m\]\H:\[\e[1;38;5;40m\]\w\[\e[1;38;5;099m\]\$ \[\e[0m\]'
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
 ### standard aliases
@@ -49,6 +49,7 @@ alias sd='sudo -Es'
 alias tcpdump='tcpdump -s0 -nnv'
 alias tree='tree -pugalhCD'
 alias v='vim'
+alias vr='vim -R'
 alias vcp='vcp -i'
 ### debian aliases
 alias ac='apt-cache'
@@ -59,6 +60,7 @@ alias afl='apt-file list'
 alias afs='apt-file search'
 alias ag='apt-get'
 alias agi='apt-get -V install'
+alias agu='apt-get -V dist-upgrade'
 alias agrp='apt-get -V remove --purge'
 alias agap='apt-get -V autoremove --purge'
 alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".deb" | cut -d "_" -f 1)'
