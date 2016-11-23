@@ -8,8 +8,8 @@ cd dotfiles
 ./files.sh install
 ```
 
-#### Rollback:
+#### Restore:
 ```bash
 cd dotfiles
-./files.sh rollback
+./files.sh restore
 ```
