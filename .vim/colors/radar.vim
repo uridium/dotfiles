@@ -20,7 +20,7 @@ let g:colors_name = "radar"
 "hi Ignore -- no settings --
 hi Normal guifg=#ffffff guibg=#000000 guisp=#000000 gui=NONE ctermfg=15 ctermbg=NONE cterm=NONE
 "hi CTagsImport -- no settings --
-"hi Search -- no settings --
+hi Search ctermbg=235 ctermfg=255 cterm=NONE
 "hi CTagsGlobalVariable -- no settings --
 "hi SpellRare -- no settings --
 "hi EnumerationValue -- no settings --
