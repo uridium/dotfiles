@@ -75,7 +75,7 @@ hi Character guifg=#ff6d56 guibg=NONE guisp=NONE gui=NONE ctermfg=209 ctermbg=NO
 hi Number guifg=#ff6d56 guibg=NONE guisp=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
 hi Boolean guifg=#fff200 guibg=NONE guisp=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
 hi Operator guifg=#fff200 guibg=NONE guisp=NONE gui=NONE ctermfg=11 ctermbg=NONE cterm=NONE
-hi CursorLine guifg=NONE guibg=#2d2d2d guisp=#2d2d2d gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
+hi CursorLine guifg=NONE guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE cterm=NONE
 hi DiffDelete guifg=NONE guibg=#8a3636 guisp=#8a3636 gui=NONE ctermfg=NONE ctermbg=95 cterm=NONE
 hi CursorColumn guifg=NONE guibg=#2d2d2d guisp=#2d2d2d gui=NONE ctermfg=NONE ctermbg=236 cterm=NONE
 hi Define guifg=#ff7158 guibg=NONE guisp=NONE gui=NONE ctermfg=209 ctermbg=NONE cterm=NONE
