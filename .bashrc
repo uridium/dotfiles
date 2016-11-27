@@ -2,7 +2,7 @@ export EDITOR='vim'
 export GIT_PS1_SHOWDIRTYSTATE=true          # unstaged (*), staged (+)
 export GIT_PS1_SHOWSTASHSTATE=true          # stashed ($)
 export GIT_PS1_SHOWUNTRACKEDFILES=true      # untracked (%)
-export GREP_COLOR='1;36;36'
+export GREP_COLORS='ms=01;34:mc=01;34:sl=:cx=:fn=35:ln=32:bn=32:se=36'
 export HISTSIZE='1000'
 export HISTFILESIZE='1000'
 export HISTTIMEFORMAT='%Y%m%d %T   '
@@ -16,16 +16,13 @@ export PROMPT_COMMAND='echo $USER "$(history 1)" >>~/.bash_eternal_history/.bash
 export PS1='\[\e[1;38;5;39m\]$(__git_ps1 "(%s) " 2>/dev/null)\[\e[1;38;5;40m\][ \t ] \[\e[1;38;5;099m\]\H:\[\e[1;38;5;40m\]\w\[\e[1;38;5;099m\]\$ \[\e[0m\]'
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 
-### standard aliases
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../../..'
 alias cal='cal -3'
 alias cp='cp -i'
 alias df='df -Th'
 alias diff='colordiff -u'
 alias exip='curl ifconfig.co'
-alias g='git'
 alias grep='LANG=C grep --color=auto'
 alias gerp='LANG=C grep --color=auto'
 alias ini='cd /etc/init.d'
@@ -40,6 +37,7 @@ alias ne='netstat -punta | grep ESTABLISHED'
 alias nls='netstat -puntl'
 alias nlsg='netstat -puntl | grep $1'
 alias ps='ps --headers af -eo "user:16 pid %cpu %mem nice stat lstart:32 etime:16 nlwp args"'
+alias pwgen='pwgen 10 1'
 alias rm='rm -i'
 alias scp='scp -o ConnectTimeout=10'
 alias screen='LC_ALL=C screen'
@@ -50,8 +48,8 @@ alias tcpdump='tcpdump -s0 -nnv'
 alias tree='tree -pugalhCD'
 alias v='vim'
 alias vr='vim -R'
-alias vcp='vcp -i'
-### debian aliases
+
+# debian specific
 alias ac='apt-cache'
 alias acp='apt-cache policy'
 alias acsh='apt-cache show'
@@ -65,12 +63,28 @@ alias agrp='apt-get -V remove --purge'
 alias agap='apt-get -V autoremove --purge'
 alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".deb" | cut -d "_" -f 1)'
 
-# wylaczamy powiadomienia o mailach
+# aws specific
+complete -C aws_completer aws
+alias aws-ami-id="curl -w '\n' http://169.254.169.254/latest/meta-data/ami-id"
+alias aws-instance-id="curl -w '\n' http://169.254.169.254/latest/meta-data/instance-id"
+alias aws-instance-type="curl -w '\n' http://169.254.169.254/latest/meta-data/instance-type"
+alias aws-local-ipv4="curl -w '\n' http://169.254.169.254/latest/meta-data/local-ipv4"
+alias aws-public-ipv4="curl -w '\n' http://169.254.169.254/latest/meta-data/public-ipv4"
+alias aws-security-groups="curl -w '\n' http://169.254.169.254/latest/meta-data/security-groups"
+
+# turning off email info
 shopt -u mailwarn
 unset MAILCHECK
 
-# awscli command completion
-complete -C aws_completer aws
+# sorting packages
+function acs() {
+    apt-cache search $1 | sort
+}
+
+# combing through eternal history
+function eh() {
+    grep -i -h $@ $HOME/.bash_eternal_history/.bash*
+}
 
 # creating bash eternal history
 if [ ! -d $HOME/.bash_eternal_history ]; then
@@ -102,12 +116,12 @@ fi
 
 # reading bash local settings
 if [ -e $HOME/.bashrc_local ]; then
-    . $HOME/.bashrc_local
+    source $HOME/.bashrc_local
 fi
 
 # reading bash completion
 if [ -e /etc/bash_completion ]; then
-    . /etc/bash_completion
+    source  /etc/bash_completion
 fi
 
 # terminal colors
@@ -121,19 +135,3 @@ fi
 if [ -t 0 ]; then
     stty stop undef
 fi
-
-# generowanie hasla,
-# jesli nie podamy dlugosci hasla (np. genp 16), zwrocone zostanie 8 znakowe
-function genp() {
-    tr -dc 'A-Za-z0-9' </dev/urandom | head -c ${1:-8} | xargs
-}
-
-# posortowane wyszukiwanie pakietow
-function acs() {
-    apt-cache search $1 | sort
-}
-
-# przeszukiwanie eternal history
-function eh() {
-    grep -i -h $1 $HOME/.bash_eternal_history/.bash*
-}
