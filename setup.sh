@@ -14,10 +14,6 @@ function old {
     echo "$i restored"
 }
 
-function reconfig {
-    source $HOME/.bashrc
-}
-
 case "$1" in
     install)
         test -d $oldconf || mkdir $oldconf
@@ -34,8 +30,6 @@ case "$1" in
             fi
             ln -s $conf/$i $HOME && echo "$i installed"
         done
-
-        reconfig
         ;;
     restore)
         for i in $files; do
@@ -51,7 +45,6 @@ case "$1" in
         done
 
         test -d $oldconf && rmdir $oldconf
-        reconfig
         ;;
     *)
         echo "Usage: $0 {install|restore}" 1>&2
