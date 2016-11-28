@@ -4,14 +4,18 @@ files=".bashrc .gitconfig .gitignore .inputrc .mongorc.js .my.cnf .profile .psql
 conf=$(pwd)
 oldconf=$HOME/.dotfiles.old
 
-function new {
+function new() {
     mv $HOME/$i $oldconf/
 }
 
-function old {
+function old() {
     rm -f $HOME/$i
     mv $oldconf/$i $HOME/
     echo "$i restored"
+}
+
+function message() {
+    echo "Logout and login to reload configuration"
 }
 
 case "$1" in
@@ -30,6 +34,7 @@ case "$1" in
             fi
             ln -s $conf/$i $HOME && echo "$i installed"
         done
+        message
         ;;
     restore)
         for i in $files; do
@@ -45,6 +50,7 @@ case "$1" in
         done
 
         test -d $oldconf && rmdir $oldconf
+        message
         ;;
     *)
         echo "Usage: $0 {install|restore}" 1>&2
