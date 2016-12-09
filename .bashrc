@@ -91,6 +91,16 @@ function __awsenv_ps1() {
     test -n "$ps" && echo "<$ps>"
 }
 
+# local apps
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# python apps
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
 # creating bash eternal history
 if [ ! -d $HOME/.bash_eternal_history ]; then
     install -m 700 -d $HOME/.bash_eternal_history
