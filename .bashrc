@@ -45,7 +45,7 @@ alias ssh='ssh -o ConnectTimeout=10 -o HashKnownHosts=no -o ForwardAgent=yes -o 
 alias sudo='sudo '
 alias sd='sudo -Es'
 alias tcpdump='tcpdump -s0 -nnv'
-alias tree='tree -pugalhCD'
+alias tree='tree -pugalhCD --timefmt "+%Y%m%d %H:%M:%S"'
 alias v='vim'
 alias vr='vim -R'
 
@@ -64,7 +64,6 @@ alias agap='apt-get -V autoremove --purge'
 alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".deb" | cut -d "_" -f 1)'
 
 # aws specific
-complete -C aws_completer aws
 alias aws-ami-id="curl -w '\n' http://169.254.169.254/latest/meta-data/ami-id"
 alias aws-instance-id="curl -w '\n' http://169.254.169.254/latest/meta-data/instance-id"
 alias aws-instance-type="curl -w '\n' http://169.254.169.254/latest/meta-data/instance-type"
@@ -84,11 +83,6 @@ function acs() {
 # combing through eternal history
 function eh() {
     grep -i -h $@ $HOME/.bash_eternal_history/.bash*
-}
-
-function __awsenv_ps1() {
-    ps=$(cat $HOME/.aws/.env 2>/dev/null)
-    test -n "$ps" && echo "<$ps>"
 }
 
 # local apps

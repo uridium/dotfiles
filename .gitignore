@@ -1,3 +1,6 @@
 *~
 *.sw?
 .vagrant
+*.egg-info
+build/
+dist/

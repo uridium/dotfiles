@@ -29,7 +29,7 @@ set number
 set laststatus=2
 
 " zachowuje wciecia poprzedniej linii
-set autoindent
+" set autoindent
 
 " w ostatniej linii nie wyswietla @
 set display=lastline,uhex
