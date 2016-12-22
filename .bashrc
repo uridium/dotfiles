@@ -45,7 +45,7 @@ alias ssh='ssh -o ConnectTimeout=10 -o HashKnownHosts=no -o ForwardAgent=yes -o 
 alias sudo='sudo '
 alias sd='sudo -Es'
 alias tcpdump='tcpdump -s0 -nnv'
-alias tree='tree -pugalhCD --timefmt "+%Y%m%d %H:%M:%S"'
+alias tree='tree -pugalhCD --timefmt "%Y%m%d %H:%M:%S"'
 alias v='vim'
 alias vr='vim -R'
 
