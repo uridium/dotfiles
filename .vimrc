@@ -215,6 +215,7 @@ nmap <Space>l <Plug>AirlineSelectNextTab
 set commentstring=#\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType lua setlocal commentstring=\--\ %s
+autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 
 """ easy align
 xmap ga <Plug>(EasyAlign)
