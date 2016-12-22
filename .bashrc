@@ -95,6 +95,11 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+# ruby apps
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 # creating bash eternal history
 if [ ! -d $HOME/.bash_eternal_history ]; then
     install -m 700 -d $HOME/.bash_eternal_history
