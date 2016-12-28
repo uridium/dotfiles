@@ -30,7 +30,7 @@ case "$1" in
                 new
             fi
             if [ -L "$HOME/$i" ]; then
-                break
+                continue
             fi
             ln -s $conf/$i $HOME && echo "$i installed"
         done
