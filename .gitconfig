@@ -12,9 +12,7 @@
     lg = log --reverse --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(bold blue)<%an>%Creset%C(yellow)%d%Creset | %s'
     lgs = log --reverse --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(bold blue)<%an>%Creset%C(yellow)%d%Creset | %s' --name-status
     sh = show --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(bold blue)<%an>%Creset%C(yellow)%d%Creset | %s'
-    track = update-index --no-assume-unchanged
-    untrack = update-index --assume-unchanged
-    lsuntrack = "!git ls-files -v | grep ^h | cut -c 3-"
+    tags = tag -l --sort=version:refname
 [color]
     status = auto
     branch = auto
