@@ -1,5 +1,6 @@
 *~
 *.sw?
+.netrwhist
 .vagrant
 *.egg-info
 build/
