@@ -23,7 +23,7 @@ set titlestring=vim:\ [\ %{hostname()}\ ]\ [\ %F\ ]
 set number
 
 " kolorowanie kolumny z kursorem
-" set cursorline
+set cursorline
 
 " zawsze pokazuj statusline
 set laststatus=2
