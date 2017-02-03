@@ -49,6 +49,9 @@ set tabstop=4
 " 4-spacjowe przesuwanie >
 set shiftwidth=4
 
+" history undo dla kazdego bufora
+set hidden
+
 " otwiera nowe okno ponizej
 set splitbelow
 
@@ -216,6 +219,7 @@ set commentstring=#\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType lua setlocal commentstring=\--\ %s
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
+autocmd FileType tf setlocal tabstop=2 shiftwidth=2
 
 """ easy align
 xmap ga <Plug>(EasyAlign)
