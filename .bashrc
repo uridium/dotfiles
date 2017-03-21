@@ -69,6 +69,7 @@ alias aws-instance-type="curl -w '\n' http://169.254.169.254/latest/meta-data/in
 alias aws-local-ipv4="curl -w '\n' http://169.254.169.254/latest/meta-data/local-ipv4"
 alias aws-public-ipv4="curl -w '\n' http://169.254.169.254/latest/meta-data/public-ipv4"
 alias aws-security-groups="curl -w '\n' http://169.254.169.254/latest/meta-data/security-groups"
+alias aws-user-data="curl -w '\n' http://169.254.169.254/latest/user-data"
 
 # turning off email info
 shopt -u mailwarn
