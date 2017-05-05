@@ -3,5 +3,6 @@
 .netrwhist
 .vagrant
 *.egg-info
+.eggs/
 build/
 dist/
