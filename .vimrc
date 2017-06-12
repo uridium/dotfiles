@@ -148,6 +148,9 @@ nmap <F3> :IndentLinesToggle<CR>:LeadingSpaceToggle<CR>
 " niedrukowalne znaki
 nmap <F4> :set list!<Bar>set list?<CR>
 
+" kolorowanie kolumny z kursorem
+nmap <F6> :set cursorline!<Bar>set cursorline?<CR>
+
 " przeladowanie konfiguracji
 nmap <F12> :source $MYVIMRC<Bar>:echo "$MYVIMRC reloaded"<CR>
 
