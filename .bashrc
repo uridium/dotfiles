@@ -15,6 +15,7 @@ export LS_OPTIONS='--color=auto --hide-control-chars --classify'
 export PROMPT_COMMAND='echo $USER "$(history 1)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
 export PS1='\[\e[1;38;5;40m\][ \t ] \[\e[1;38;5;88m\]$(__awsenv_ps1 2>/dev/null)\[\e[1;38;5;099m\]\H:\[\e[1;38;5;40m\]\w\[\e[1;38;5;39m\]$(__git_ps1 " (%s)" 2>/dev/null)\[\e[1;38;5;099m\]\$ \[\e[0m\]'
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -85,16 +86,6 @@ function acs() {
 function eh() {
     grep -i -h $@ $HOME/.bash_eternal_history/.bash*
 }
-
-# local apps
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# python apps
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
 
 # ruby apps
 if which ruby >/dev/null && which gem >/dev/null; then
