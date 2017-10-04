@@ -73,6 +73,10 @@ alias aws-public-ipv4="curl -w '\n' http://169.254.169.254/latest/meta-data/publ
 alias aws-security-groups="curl -w '\n' http://169.254.169.254/latest/meta-data/security-groups"
 alias aws-user-data="curl -w '\n' http://169.254.169.254/latest/user-data"
 
+# autocomplete
+complete -C aws_completer aws
+complete -C terraform terraform
+
 # turning off email info
 shopt -u mailwarn
 unset MAILCHECK
