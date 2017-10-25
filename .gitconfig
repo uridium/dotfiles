@@ -12,6 +12,7 @@
     ci = commit
     co = checkout
     br = branch
+    bra = branch --all
     lg = log --reverse --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an%Creset%C(yellow)%d%Creset | %s'
     lgs = log --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s' --name-status --graph
     sh = show --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s'
