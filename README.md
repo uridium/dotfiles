@@ -4,12 +4,13 @@ Dotfiles
 ### Quick installation:
 Just paste this into a terminal:
 
-    curl -s https://raw.githubusercontent.com/radar-aol-pl/dotfiles/master/install.sh | bash
+    curl -s https://raw.githubusercontent.com/uridium/dotfiles/master/install.sh | bash
 
 ### Manual configuration:
+    git clone git@github.com:uridium/dotfiles.git
+
 ##### Install:
 
-    git clone https://github.com/radar-aol-pl/dotfiles.git
     cd dotfiles
     ./setup.sh install
 
