@@ -222,6 +222,8 @@ set commentstring=#\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType lua setlocal commentstring=\--\ %s
 autocmd FileType groovy setlocal commentstring=\//\ %s
+autocmd FileType tex setlocal commentstring=\%\ %s
+
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 autocmd FileType tf setlocal tabstop=2 shiftwidth=2
 
