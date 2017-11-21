@@ -155,8 +155,8 @@ nmap <F6> :set cursorline!<Bar>set cursorline?<CR>
 nmap <F12> :source $MYVIMRC<Bar>:echo "$MYVIMRC reloaded"<CR>
 
 " kasowanie bez kopiowania
-nnoremap <Leader>d "_d
-vnoremap <Leader>d "_d
+nnoremap d "_d
+vnoremap d "_d
 
 " podmiana textu w vmode na ten z bufora
 vnoremap <Leader>r "_dP
