@@ -15,6 +15,7 @@
     co = checkout
     br = branch
     bra = branch --all
+    cl = clone --recursive
     dif = diff --no-prefix --relative # not-staged
     difs = diff --no-prefix --relative --staged # staged
     difa = status -vv # staged and not-staged
