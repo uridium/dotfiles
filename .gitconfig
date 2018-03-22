@@ -22,7 +22,7 @@
     lg = log --reverse --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an%Creset%C(yellow)%d%Creset | %s'
     lgs = log --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s' --graph
     sh = show --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s'
-    tags = for-each-ref --format '%(refname:lstrip=2) %09 %(taggerdate) %09 %(taggername) %(taggeremail) %09 %(subject)' refs/tags --sort=version:refname
+    tags = for-each-ref --sort=taggerdate --format '%(refname:lstrip=2) %09 %(taggerdate:iso) %09 %(taggername) %(taggeremail) %09 %(subject)' refs/tags
 [color]
     status = auto
     branch = auto
