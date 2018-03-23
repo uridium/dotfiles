@@ -4,8 +4,8 @@ set nocompatible
 " ignorowanie wielkosci liter podczas wyszukiwania
 set ignorecase
 
-" podswietlanie podczas wyszukiwania
-set incsearch
+" nie przewijaj ekrany podczas wyszukiwania
+set noincsearch
 
 " podswietlenie wszystkich wyszukanych wynikow
 set hlsearch
