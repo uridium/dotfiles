@@ -117,7 +117,7 @@ function pst() {
 
 # ruby apps
 if which ruby >/dev/null && which gem >/dev/null; then
-    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+    PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
 # creating bash eternal history
