@@ -19,10 +19,13 @@
     dif = diff --no-prefix --relative # not-staged
     difs = diff --no-prefix --relative --staged # staged
     difa = status -vv # staged and not-staged
+    dt = difftool --no-prompt
     lg = log --reverse --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an%Creset%C(yellow)%d%Creset | %s'
     lgs = log --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s' --graph
     sh = show --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s'
     tags = for-each-ref --sort=taggerdate --format '%(refname:lstrip=2) %09 %(taggerdate:iso) %09 %(taggername) %(taggeremail) %09 %(subject)' refs/tags
+[diff]
+    tool = meld
 [color]
     status = auto
     branch = auto
