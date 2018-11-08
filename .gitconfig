@@ -23,7 +23,7 @@
     lg = log --reverse --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an%Creset%C(yellow)%d%Creset | %s'
     lgs = log --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s' --graph
     sh = show --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%an <%ae>%Creset%C(yellow)%d%Creset | %s'
-    tags = for-each-ref --sort=taggerdate --format '%(refname:lstrip=2) %09 %(taggerdate:iso) %09 %(taggername) %(taggeremail) %09 %(subject)' refs/tags
+    tags = !git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate:iso)  %(refname:lstrip=2) %(else)%(*committerdate:iso)  %(refname:lstrip=2) %09  %(taggeremail) %(subject)%(end)' refs/tags | sort
 [diff]
     tool = meld
 [color]
