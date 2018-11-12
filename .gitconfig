@@ -28,11 +28,17 @@
 [diff]
     tool = meld
 [difftool]
-	prompt = false
+    prompt = false
+[difftool "meld"]
+    cmd = meld $LOCAL $REMOTE
 [merge]
     tool = meld
+    conflictstyle = diff3
 [mergetool]
-	prompt = false
+    prompt = false
+    keepBackup = false
+[mergetool "meld"]
+    cmd = meld $LOCAL $MERGED $REMOTE --output $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE
 [color]
     status = auto
     branch = auto
