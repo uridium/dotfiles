@@ -10,6 +10,7 @@
 [status]
     submoduleSummary = true
 [alias]
+    ad = add --patch
     st = status
     ci = commit
     co = checkout
