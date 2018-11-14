@@ -39,7 +39,7 @@
     prompt = false
     keepBackup = false
 [mergetool "meld"]
-    cmd = meld $LOCAL $MERGED $REMOTE --output $MERGED --diff $BASE $LOCAL --diff $BASE $REMOTE
+    cmd = meld $LOCAL $MERGED $REMOTE --output $MERGED
 [color]
     status = auto
     branch = auto
