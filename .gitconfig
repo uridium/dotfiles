@@ -17,8 +17,8 @@
     br = branch
     bra = branch --all
     cl = clone --recursive
-    df = diff --no-prefix --relative # not-staged
-    dfs = diff --no-prefix --relative --staged # staged
+    df = diff --relative # not-staged
+    dfs = diff --relative --staged # staged
     dfa = status -vv # staged and not-staged
     dt = difftool --dir-diff
     mt = mergetool
@@ -28,6 +28,7 @@
     tags = !git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate:iso)  %(refname:lstrip=2) %(else)%(*committerdate:iso)  %(refname:lstrip=2) %09  %(taggeremail) %(subject)%(end)' refs/tags | sort
 [diff]
     tool = meld
+    mnemonicPrefix = true
 [difftool]
     prompt = false
 [difftool "meld"]
