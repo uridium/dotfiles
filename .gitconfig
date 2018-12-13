@@ -17,8 +17,8 @@
     br = branch
     bra = branch --all
     cl = clone --recursive
-    df = diff --relative # not-staged
-    dfs = diff --relative --staged # staged
+    df = diff # not-staged
+    dfs = diff --staged # staged
     dfa = status -vv # staged and not-staged
     dt = difftool --dir-diff
     mt = mergetool
