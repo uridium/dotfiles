@@ -1,10 +1,8 @@
-[user]
-    name = Radar
-    email = radar@protonmail.com
-    signingkey = A35E131A4FE7073F
 [core]
     pager = cat
     excludesfile = ~/.gitignore
+[user]
+   signingkey = A35E131A4FE7073F
 [commit]
     gpgsign = true
 [status]
@@ -62,5 +60,7 @@
     added = green bold
     changed = yellow bold
     untracked = red bold
+[includeif "gitdir:~/git/"]
+    path = ~/.gitconfig.git
 [includeif "gitdir:~/work/"]
     path = ~/.gitconfig.work
