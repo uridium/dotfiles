@@ -13,7 +13,7 @@
     ci = commit
     co = checkout
     br = branch
-    bra = branch --all
+    bra = branch --all -vv
     cl = clone --recursive
     df = diff # not-staged
     dfs = diff --staged # staged
