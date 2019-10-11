@@ -19,6 +19,7 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 alias ..='cd ..'
 alias ...='cd ../..'
+alias av='aws-vault --backend=pass --pass-prefix=aws --pass-cmd=gopass'
 alias cal='cal -3'
 alias cp='cp -i'
 alias df='df -Th'
