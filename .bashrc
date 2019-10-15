@@ -12,6 +12,10 @@ export LESS_TERMCAP_me=$'\E[0m'             # End all mode like so, us, mb, md a
 export LESS_TERMCAP_ue=$'\E[0m'             # End underlining
 export LESS_TERMCAP_us=$'\E[01;32m'         # Start underlining
 export LS_OPTIONS='--color=auto --hide-control-chars --classify'
+export AWS_VAULT_BACKEND='pass'
+export AWS_VAULT_PASS_PREFIX='aws'
+export AWS_VAULT_PASS_CMD='gopass'
+export AWS_SESSION_TTL='8h'
 export PROMPT_COMMAND='echo $USER "$(history 1)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
 export PS1='\[\e[1;38;5;40m\][ \t ] \[\e[1;38;5;88m\]$(__awsenv_ps1 2>/dev/null)\[\e[1;38;5;099m\]\H:\[\e[1;38;5;40m\]\w\[\e[1;38;5;39m\]$(__git_ps1 " (%s)" 2>/dev/null)\[\e[1;38;5;099m\]\$ \[\e[0m\]'
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
@@ -19,7 +23,9 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
 alias ..='cd ..'
 alias ...='cd ../..'
-alias av='aws-vault --backend=pass --pass-prefix=aws --pass-cmd=gopass'
+alias av='aws-vault'
+alias ave='aws-vault exec'
+alias avl='aws-vault login'
 alias cal='cal -3'
 alias cp='cp -i'
 alias df='df -Th'
