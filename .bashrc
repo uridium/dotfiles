@@ -18,7 +18,7 @@ export AWS_VAULT_PASS_CMD='gopass'
 export AWS_ASSUME_ROLE_TTL='1h'
 export AWS_SESSION_TTL='1h'
 export PROMPT_COMMAND='echo $USER "$(history 1)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
-export PS1='\[\e[1;38;5;40m\][ \t ] \[\e[1;38;5;88m\]$(echo "<$AWS_VAULT> " 2>/dev/null)\[\e[1;38;5;099m\]\H:\[\e[1;38;5;40m\]\w\[\e[1;38;5;39m\]$(__git_ps1 " (%s)" 2>/dev/null)\[\e[1;38;5;099m\]\$ \[\e[0m\]'
+export PS1='\[\e[1;38;5;40m\][ \t ] \[\e[1;38;5;88m\]$(__awsenv_ps1 2>/dev/null)\[\e[1;38;5;099m\]\H:\[\e[1;38;5;40m\]\w\[\e[1;38;5;39m\]$(__git_ps1 " (%s)" 2>/dev/null)\[\e[1;38;5;099m\]\$ \[\e[0m\]'
 export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:bin/java::")
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 
