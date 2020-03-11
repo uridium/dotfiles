@@ -39,6 +39,9 @@
     keepBackup = false
 [mergetool "meld"]
     cmd = meld $LOCAL $MERGED $REMOTE --output $MERGED
+[rebase]
+    abbreviateCommands = true
+    instructionFormat = | %ad  %an | %s
 [color]
     status = auto
     branch = auto
