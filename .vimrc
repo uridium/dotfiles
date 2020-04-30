@@ -226,6 +226,7 @@ autocmd FileType tex setlocal commentstring=\%\ %s
 
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 autocmd FileType tf setlocal tabstop=2 shiftwidth=2
+autocmd FileType make setlocal noexpandtab
 
 """ easy align
 xmap ga <Plug>(EasyAlign)
