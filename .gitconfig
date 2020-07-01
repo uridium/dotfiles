@@ -9,6 +9,7 @@
     submoduleSummary = true
 [alias]
     ad = add --patch
+    adu = add --update
     st = status
     ci = commit
     co = checkout
