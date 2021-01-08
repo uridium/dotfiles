@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files=".bashrc .gitconfig .gitignore .inputrc .mongorc.js .my.cnf .profile .psqlrc .screenrc .vimrc .vim"
+files=".bashrc .gitconfig .gitignore .inputrc .profile .vimrc .vim"
 conf=$(pwd)
 oldconf=$HOME/.dotfiles.old
 
