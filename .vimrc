@@ -37,6 +37,9 @@ set display=lastline,uhex
 " tak wygladaja znaki niedrukowalne (F4)
 set listchars=tab:>-,trail:-,eol:$
 
+" wlacza uzycie backspace
+set backspace=indent,eol,start
+
 " wylacza ladowanie foldow
 set nofoldenable
 
@@ -227,6 +230,8 @@ autocmd FileType tex setlocal commentstring=\%\ %s
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 autocmd FileType tf setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal noexpandtab
+autocmd BufEnter *.pp,*.erb setfiletype ruby
+autocmd BufEnter *.tf,*.tfvars setfiletype tf
 
 """ easy align
 xmap ga <Plug>(EasyAlign)
@@ -240,4 +245,4 @@ let g:indentLine_fileType = []
 let g:indentLine_color_term = 239
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
-let g:indentLine_setConceal = 0
+" let g:indentLine_setConceal = 0
