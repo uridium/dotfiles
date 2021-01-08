@@ -21,9 +21,9 @@
     dfa = status -vv # staged and not-staged
     dt = difftool --dir-diff
     mt = mergetool
-    lg = log --reverse --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%G? %an%Creset%C(yellow)%d%Creset | %s'
-    lgs = log --date=iso --pretty=tformat:'%Cred%h%Creset | %Cgreen%ad %C(blue)%G? %an <%ae>%Creset%C(yellow)%d%Creset | %s' --graph
-    sh = show --date=iso --pretty=format:'%Cred%h%Creset | %Cgreen%ad %C(blue)%GG %an <%ae>%Creset%C(yellow)%d%Creset | %s'
+    lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#E0646C")%G? %an%Creset%C("#FFD24D")%d%Creset | %s'
+    lgs = log --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#E0646C")%G? %an%Creset%C("#FFD24D")%d%Creset | %s' --graph
+    sh = show --date=iso --pretty=format:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#858661")%GG %an <%ae>%Creset%C("#FFD24D")%d%Creset | %s'
     tags = !git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate:iso)  %(refname:lstrip=2) %(else)%(*committerdate:iso)  %(refname:lstrip=2) %09  %(taggeremail) %(subject)%(end)' refs/tags | sort
 [diff]
     tool = meld
@@ -48,21 +48,21 @@
     branch = auto
     diff = auto
     ui = auto
-[color "grep"]
-    match = cyan bold
 [color "branch"]
-    current = yellow bold
-    local = green bold
-    remote = cyan bold
+    current = "#65AC65"
+    local = "#FFD24D"
+    remote = "#E0646C"
 [color "diff"]
-    meta = bold
-    frag = bold
-    old = red
-    new = green
+    meta = "#999999"
+    func = "#999999"
+    frag = "#999999"
+    old = "#E0646C"
+    new = "#65AC65"
 [color "status"]
-    added = green bold
-    changed = yellow bold
-    untracked = red bold
+    header = "#999999"
+    added = "#65AC65"
+    changed = "#FFD24D"
+    untracked = "#E0646C"
 [includeif "gitdir:~/git/"]
     path = ~/.gitconfig.git
 [includeif "gitdir:~/work/"]
