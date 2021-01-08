@@ -2,7 +2,7 @@
     pager = cat
     excludesfile = ~/.gitignore
 [user]
-   signingkey = A35E131A4FE7073F
+    signingkey = 28D5ECB23C0ABE4DEAB241DDE79ABEBBDC15A429
 [commit]
     gpgsign = true
 [status]
