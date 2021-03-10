@@ -45,6 +45,8 @@
 [rebase]
     abbreviateCommands = true
     instructionFormat = | %ad  %an | %s
+[tag]
+    sort = version:refname
 [color]
     status = auto
     branch = auto
