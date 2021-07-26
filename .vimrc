@@ -232,8 +232,9 @@ autocmd FileType tf setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal noexpandtab
 
 autocmd BufEnter *.pp,*.erb setfiletype ruby
+autocmd BufEnter *.json setfiletype javascript
 autocmd BufEnter *.tf,*.tfvars setfiletype tf
-autocmd BufEnter Jenkinsfile,*.Jenkinsfile setfiletype groovy
+autocmd BufEnter Jenkinsfile,*.Jenkinsfile,Jenkinsfile.* setfiletype groovy
 
 """ easy align
 xmap ga <Plug>(EasyAlign)
