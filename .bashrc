@@ -146,13 +146,6 @@ if [ -e /etc/bash_completion ]; then
     source  /etc/bash_completion
 fi
 
-# terminal colors
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-    export TERM='xterm-256color'
-else
-    export TERM='xterm-color'
-fi
-
 # unmap ctrl+s
 if [ -t 0 ]; then
     stty stop undef
