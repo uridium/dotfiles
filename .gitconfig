@@ -56,12 +56,6 @@
     current = "#65AC65"
     local = "#FFD24D"
     remote = "#E0646C"
-[color "diff"]
-    meta = "#999999"
-    func = "#999999"
-    frag = "#999999"
-    old = "#E0646C"
-    new = "#65AC65"
 [color "status"]
     header = "#999999"
     added = "#65AC65"
