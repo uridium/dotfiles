@@ -103,30 +103,6 @@ function eh() {
     grep -i -h $@ $HOME/.bash_eternal_history/.bash*
 }
 
-# print all child processes for a given pid
-function pst() {
-    \ps -ww --forest -o "user:16 pid %cpu %mem nice stat lstart:32 etime:16 nlwp args" \
-    $(\ps -e --no-header -o pid,ppid | awk -vp=$1 '
-        function r(s){
-            print s
-            s=a[s]
-            while(s){
-                sub(",","",s)
-                t=s
-                sub(",.*","",t)
-                sub("[0-9]+","",s)
-                r(t)
-            }
-        }
-
-        { a[$2]=a[$2]","$1 }
-
-        END{
-            r(p)
-        }
-    ')
-}
-
 # ruby apps
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
