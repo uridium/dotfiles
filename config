@@ -1,0 +1,8 @@
+Host *
+    AddKeysToAgent yes
+    ForwardAgent yes
+    HashKnownHosts no
+    ConnectTimeout 10
+    ServerAliveInterval 60
+    ControlMaster auto
+    ControlPersist 1h
