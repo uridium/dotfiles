@@ -225,14 +225,16 @@ set commentstring=#\ %s
 autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType lua setlocal commentstring=\--\ %s
 autocmd FileType groovy setlocal commentstring=\//\ %s
+autocmd FileType javascript setlocal commentstring=\//\ %s
 autocmd FileType tex setlocal commentstring=\%\ %s
 
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
 autocmd FileType tf setlocal tabstop=2 shiftwidth=2
+autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
 autocmd FileType make setlocal noexpandtab
 
 autocmd BufEnter *.pp,*.erb setfiletype ruby
-autocmd BufEnter *.json setfiletype javascript
+autocmd BufEnter *.json,*.j2 setfiletype javascript
 autocmd BufEnter *.tf,*.tfvars setfiletype tf
 autocmd BufEnter Jenkinsfile,*.Jenkinsfile,Jenkinsfile.* setfiletype groovy
 
