@@ -138,6 +138,12 @@ nmap <Leader>c :let @/=""<CR>
 " zamyka buffer i przechodzi do poprzedniego
 nmap <Leader>bd :bd!<CR>
 
+" przelacza pomiedzy otwartymi plikami
+nmap <Space>] :bn<CR>
+nmap <Space>[ :bp<CR>
+nmap <Space><Right> :bn<CR>
+nmap <Space><Left> :bp<CR>
+
 " formatowanie tekstu (kazda linia osobno)
 nmap Q :!fmt -s -w72<CR>
 vmap Q :!fmt -s -w72<CR>
