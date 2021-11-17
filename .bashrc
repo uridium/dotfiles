@@ -74,8 +74,6 @@ alias aws-user-data="curl -w '\n' http://169.254.169.254/latest/user-data"
 # autocomplete
 complete -C aws_completer aws
 complete -C terraform terraform
-# include
-source $HOME/.bashrc_* 2>/dev/null
 
 # turning off email info
 shopt -u mailwarn
