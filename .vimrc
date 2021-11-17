@@ -129,8 +129,8 @@ imap <Esc>k <Esc>l<Up>
 
 " mapowanie q i w
 nmap <Tab>q :q!<CR>
-nmap <Tab>w :w<CR>
-nmap qw :wq<CR>
+nmap <Tab>w :wa<CR>
+nmap qw :wqa<CR>
 
 " kasowanie wyszukanych wynikow \c
 nmap <Leader>c :let @/=""<CR>
