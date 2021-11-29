@@ -1,109 +1,61 @@
-" wylacza kompatybilnosc z vi
-set nocompatible
-
-" ignorowanie wielkosci liter podczas wyszukiwania
+" turn on case insensitive search
 set ignorecase
 
-" nie przewijaj ekrany podczas wyszukiwania
+" turn off incremental highlighting of the searching string while typing
 set noincsearch
 
-" podswietlenie wszystkich wyszukanych wynikow
+" highlight all search pattern matches
 set hlsearch
 
-" tytul na pasku konsoli
+" turn on terminal title
 set title
 
-" parametry title
+" set terminal title to look like: vim: [ HOSTNAME ] [ /path/to/file ]
 set titlestring=vim:\ [\ %{hostname()}\ ]\ [\ %F\ ]
 
-" parametry statusline
-"set statusline=[\ %{hostname()}\ ]\ \ [\ %F\ ]\ %m%r%h%w\%=[\ Type=%Y\ ]\ \ [\ x=%04v,y=%04l\ ]\ \ [\ %p%%\ ]\ \ [\ Length=%L\ ]
-
-" numerowanie linii
+" display line numbers
 set number
 
-" kolorowanie kolumny z kursorem
+" highlight current line
 set cursorline
 
-" zawsze pokazuj statusline
+" display status line always
 set laststatus=2
 
-" zachowuje wciecia poprzedniej linii
-" set autoindent
-
-" w ostatniej linii nie wyswietla @
+" do not show @ symbol when line does not fit on screen
 set display=lastline,uhex
 
-" tak wygladaja znaki niedrukowalne (F4)
+" visualize tabs, trailing spaces and line endings
 set listchars=tab:>-,trail:-,eol:$
 
-" wlacza uzycie backspace
-set backspace=indent,eol,start
-
-" wylacza ladowanie foldow
+" turn off folding
 set nofoldenable
 
-" spacje zamiast tabulatora,
+" insert space characters whenever the tab key is pressed
 set expandtab
 
-" 4-spacjowy tabulator
+" set the number spaces to insert when the tab key is pressed
 set tabstop=4
 
-" 4-spacjowe przesuwanie >
+" set the number spaces to insert when > is used
 set shiftwidth=4
 
-" history undo dla kazdego bufora
+" turn off "No write since last change' when changing buffers
 set hidden
 
-" otwiera nowe okno ponizej
-set splitbelow
-
-" nowe okno po prawej
-set splitright
-
-" ilosc wpisow w historii
-set history=50
-
-" kodowanie
-set encoding=utf-8
-set termencoding=utf-8
-set fileencoding=utf-8
-
-" start scrolling gdy kursor jest 1 linie od krawedzi strony
+" start scrolling when the cursor is X lines from the top/bottom of the screen
 set scrolloff=1
 
-" pokazuje w prawym dolnym rogu nr linii w vmode lub aktualna komende
-set showcmd
-
-" wklejanie
-set pastetoggle=<F5>
-
-" 256 kolorow jesli nie ma ustawionej $TERM=xterm-256color
-set t_Co=256
-
-" kolory
+" use custom colorscheme
 colorscheme radar
 
-" podswietlanie skladni
-syntax on
-
-" wylaczenie podswietlania nawiasow
+" turn off highlighting of parenthesis matching
 let loaded_matchparen=1
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" abbreviations
-
-iab date# <C-R>=strftime("%Y%m%d %H:%M:%S")<CR>
-iab date822# <C-R>=strftime("%a, %d %b %Y %H:%M:%S %z")<CR>
-iab hostname# <C-R>=hostname()<CR>
-iab path# <C-R>=expand("%:p")<CR>
-iab pwd# <C-R>=expand("%:p:h")<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " mappings
 
-" wstawia nowa linie bez pozostania w insert mode
-map <Esc><Enter>  O<Esc>
+" insert new line in normal mode
 map <Enter> o<Esc>
 
 " podczas ctrl+e/y kursor nie przemieszcza sie z tekstem
@@ -114,74 +66,69 @@ map <C-Y> <C-Y>k
 vmap > :><CR>gv
 vmap < :<<CR>gv
 
-" tabulator (jeden klik zamiast dwoch)
+" shift line with one >
 nmap > >>
 nmap < <<
 
-" wstawienie jednego znaku
+" insert one character and go to normal mode
 map ii i<Space><Esc>r
 
-" Alt i l,h,j,k jako "kursory" w insert mode
+" navigate in insert mode using Alt + h/j/k/l
 imap <Esc>l <Right>
 imap <Esc>h <Left>
 imap <Esc>j <Esc>l<Down>
 imap <Esc>k <Esc>l<Up>
 
-" mapowanie q i w
+" save/quit with Tab
 nmap <Tab>q :q!<CR>
 nmap <Tab>w :wa<CR>
 nmap qw :wqa<CR>
 
-" kasowanie wyszukanych wynikow \c
+" clear highlightet searches
 nmap <Leader>c :let @/=""<CR>
 
-" zamyka buffer i przechodzi do poprzedniego
+" close active buffer
 nmap <Leader>bd :bd!<CR>
 
-" przelacza pomiedzy otwartymi plikami
+" switch between open buffers
 nmap <Space>] :bn<CR>
 nmap <Space>[ :bp<CR>
 nmap <Space><Right> :bn<CR>
 nmap <Space><Left> :bp<CR>
 
-" formatowanie tekstu (kazda linia osobno)
-nmap Q :!fmt -s -w72<CR>
-vmap Q :!fmt -s -w72<CR>
-
-" numerowanie linii
+" toggle line numbering
 nmap <F2> :set number!<Bar>set number?<CR>
 
-" wyswietlanie indentLine
+" toggle line indentation
 nmap <F3> :IndentLinesToggle<CR>:LeadingSpaceToggle<CR>
 
-" niedrukowalne znaki
+" toggle tabs, trailing spaces and line endings
 nmap <F4> :set list!<Bar>set list?<CR>
 
-" kolorowanie kolumny z kursorem
-nmap <F6> :set cursorline!<Bar>set cursorline?<CR>
-
-" przeladowanie konfiguracji
-nmap <F12> :source $MYVIMRC<Bar>:echo "$MYVIMRC reloaded"<CR>
-
-" kasowanie bez kopiowania
+" remove line without copying
 nnoremap <Leader>d "_d
 vnoremap <Leader>d "_d
 
-" podmiana textu w vmode na ten z bufora
-vnoremap <Leader>r "_dP
-
-" pozostawia wciecie po nacisnieciu Esc
-nnoremap o ox<BS>
-nnoremap O Ox<BS>
-inoremap <CR> <CR>x<BS>
-
-" dopelnianie calego powyzszego slowa
+" copy a word above and paste it at the current position
 inoremap <expr> <C-Y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\\|.\)')
+
+" eliminate delay on ESC
+augroup FastEscape
+  autocmd!
+  autocmd InsertEnter * set timeoutlen=0
+  autocmd InsertLeave * set timeoutlen=1000
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" abbreviations
+
+iab date# <C-R>=strftime("%Y%m%d %H:%M:%S")<CR>
+iab path# <C-R>=expand("%:p")<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " functions
 
-" kasowanie trailing spaces podczas zapisu
+" remove white spaces when saving a file
 function! TrimWhiteSpace()
     %s/\s\+$//e
 endfunction
