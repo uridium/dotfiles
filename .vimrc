@@ -28,6 +28,9 @@ set display=lastline,uhex
 " visualize tabs, trailing spaces and line endings
 set listchars=tab:>-,trail:-,eol:$
 
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
 " turn off folding
 set nofoldenable
 
@@ -46,6 +49,9 @@ set hidden
 " start scrolling when the cursor is X lines from the top/bottom of the screen
 set scrolloff=1
 
+" turn on color syntax highlighting
+syntax on
+
 " use custom colorscheme
 colorscheme radar
 
@@ -53,8 +59,7 @@ colorscheme radar
 let loaded_matchparen=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" mappings
-
+""" mappings
 " insert new line in normal mode
 map <Enter> o<Esc>
 
@@ -120,14 +125,12 @@ augroup FastEscape
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" abbreviations
-
+""" abbreviations
 iab date# <C-R>=strftime("%Y%m%d %H:%M:%S")<CR>
 iab path# <C-R>=expand("%:p")<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" functions
-
+""" functions
 " remove white spaces when saving a file
 function! TrimWhiteSpace()
     %s/\s\+$//e
@@ -139,9 +142,8 @@ autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" plugins
-
-""" airline
+""" plugins
+" airline
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
@@ -161,6 +163,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+
 nmap <Space>1 <Plug>AirlineSelectTab1
 nmap <Space>2 <Plug>AirlineSelectTab2
 nmap <Space>3 <Plug>AirlineSelectTab3
@@ -173,8 +176,9 @@ nmap <Space>9 <Plug>AirlineSelectTab9
 nmap <Space>h <Plug>AirlineSelectPrevTab
 nmap <Space>l <Plug>AirlineSelectNextTab
 
-""" commentary
+" commentary
 set commentstring=#\ %s
+
 autocmd FileType vim setlocal commentstring=\"\ %s
 autocmd FileType lua setlocal commentstring=\--\ %s
 autocmd FileType groovy setlocal commentstring=\//\ %s
@@ -191,11 +195,11 @@ autocmd BufEnter *.json,*.j2 setfiletype javascript
 autocmd BufEnter *.tf,*.tfvars setfiletype tf
 autocmd BufEnter Jenkinsfile,*.Jenkinsfile,Jenkinsfile.* setfiletype groovy
 
-""" easy align
+" easy align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-""" indentline
+" indentline
 let g:indentLine_enabled = 1
 let g:indentLine_leadingSpaceEnabled = 1
 let g:indentLine_char = '┊'
