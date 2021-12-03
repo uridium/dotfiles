@@ -1,69 +1,26 @@
-# podczas wpisywania nawiasu zamykajacego "podswietla" chwilowo poczatkowy
-set blink-matching-paren on
-
-# ignorowanie wielkosci liter podczas uzupelniania polecenia
+# make auto-completion case-insensitive
 set completion-ignore-case on
 
-# jesli ustawione na on, zapobiega uzupelnianiu slow
-set disable-completion off
-
-# jesli ustawione na on, probuje udostepnic klawiature numeryczna
-set enable-keypad off
-
-# jesli ustawione na on, wiersze beda przewijane w pionie, gdy wpisywany tekst
-# bedzie wykraczal poza prawa krawedz ekranu
-set horizontal-scroll-mode off
-
-# maksymalna liczba dostepnych uzupelnien, po osiagnieciu ktorej user
-# bedzie pytany o potwierdzenie dalszego wyswietlania
-set completion-query-items 500
-
-# jesli ustawione na on, linie historii ktore ulegly modyfikacji beda oznaczone *
-set mark-modified-lines off
-
-# podczas uzupelniania nazw dolacza / do nazw katalogow
-set mark-directories on
-
-# podczas uzupelniania nazw dolacza / do nazw dowiazan wskazujacych na katalogi
+# complete symlinks to directories with a slash appended
 set mark-symlinked-directories on
 
-# podczas uzupelniania nazwy uwzglednia tez pliku ukryte
+# match hidden files when completing filename
 set match-hidden-files on
 
-# podczas stronicowania uzupelnianych nazw uzywana jest funkcja podobna do more
-set page-completions on
-
-# jesli ustawione na on, ciagi uzupelnianych nazw wyswietlane alfabetycznie w poziomie
-set print-completions-horizontally off
-
-# wyswietlenie listy mozliwych nazw zamiast dzwonka
+# list matches immediately instead of ringing the bell
 set show-all-if-ambiguous on
 set show-all-if-unmodified on
 
-# wykorzystanie podczas uzupelniania polecenia instrukcji z ls -F (*,/,@,=)
+# append a filetype (*,/,@,=) to the filename when completing
 set visible-stats on
 
-# dzwonek jako mruganie ekranem
+# ring the terminal bell in a visible instead of audible way
 set prefer-visible-bell on
 set bell-style visible
 
-# tryb edycji emacs lub vi
-set editing-mode emacs
-
-# skroty klawiaturowe emacs lub vi
-set keymap emacs
-
-# ctrl + strzalka
-"\e[1;5C": forward-word
-"\e[1;5D": backward-word
-"\e[5C": forward-word
-"\e[5D": backward-word
-"\e\e[C": forward-word
-"\e\e[D": backward-word
-
-# skrot do top-a
-"\C-xt": "/usr/bin/top\n"
-
-# # przeszukiwanie historii do przodu,
-# # terminal przejmuje ctrl+s, wiec zmieniamy na ctrl+f
+# don't lock the terminal when searching history forward (owerwrite ctrl+s)
 "\C-f": forward-search-history
+
+# use ctrl+w to delete word
+set bind-tty-special-chars off
+"\C-w": backward-kill-word
