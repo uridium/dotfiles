@@ -60,29 +60,25 @@ let loaded_matchparen=1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ mappings
+" navigate in insert mode using Alt + h/j/k/l
+imap <Esc>l <Right>
+imap <Esc>h <Left>
+imap <Esc>j <Esc>l<Down>
+imap <Esc>k <Esc>l<Up>
+
 " insert new line in normal mode
-map <Enter> o<Esc>
+nmap <Enter> o<Esc>
 
-" podczas ctrl+e/y kursor nie przemieszcza sie z tekstem
-map <C-E> <C-E>j
-map <C-Y> <C-Y>k
-
-" podczas formatowania > nie traci zaznaczenia
-vmap > :><CR>gv
-vmap < :<<CR>gv
+" leave the cursor in place when scrolling
+nmap <C-E> <C-E>j
+nmap <C-Y> <C-Y>k
 
 " shift line with one >
 nmap > >>
 nmap < <<
 
 " insert one character and go to normal mode
-map ii i<Space><Esc>r
-
-" navigate in insert mode using Alt + h/j/k/l
-imap <Esc>l <Right>
-imap <Esc>h <Left>
-imap <Esc>j <Esc>l<Down>
-imap <Esc>k <Esc>l<Up>
+nmap ii i<Space><Esc>r
 
 " save/quit with Tab
 nmap <Tab>q :q!<CR>
@@ -101,6 +97,11 @@ nmap <Space>[ :bp<CR>
 nmap <Space><Right> :bn<CR>
 nmap <Space><Left> :bp<CR>
 
+" move current line to the High/Middle/Low part of the screen
+nmap HH zt
+nmap MM zz
+nmap LL zb
+
 " toggle line numbering
 nmap <F2> :set number!<Bar>set number?<CR>
 
@@ -112,7 +113,6 @@ nmap <F4> :set list!<Bar>set list?<CR>
 
 " remove line without copying
 nnoremap <Leader>d "_d
-vnoremap <Leader>d "_d
 
 " copy a word above and paste it at the current position
 inoremap <expr> <C-Y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\\|.\)')
@@ -193,7 +193,7 @@ autocmd FileType make setlocal noexpandtab
 autocmd BufEnter *.pp,*.erb setfiletype ruby
 autocmd BufEnter *.json,*.j2 setfiletype javascript
 autocmd BufEnter *.tf,*.tfvars setfiletype tf
-autocmd BufEnter Jenkinsfile,*.Jenkinsfile,Jenkinsfile.* setfiletype groovy
+autocmd BufEnter Jenkinsfile,*Jenkinsfile,Jenkinsfile* setfiletype groovy
 
 " easy align
 xmap ga <Plug>(EasyAlign)
