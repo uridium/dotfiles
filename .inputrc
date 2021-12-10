@@ -18,9 +18,17 @@ set visible-stats on
 set prefer-visible-bell on
 set bell-style visible
 
-# don't lock the terminal when searching history forward (owerwrite ctrl+s)
-"\C-f": forward-search-history
-
 # use ctrl+w to delete word
 set bind-tty-special-chars off
 "\C-w": backward-kill-word
+
+# don't lock the terminal when searching history forward (owerwrite ctrl+s)
+"\C-f": forward-search-history
+
+# move cursor forward/backward using ctrl+arrow
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+"\e[5C": forward-word
+"\e[5D": backward-word
+"\e\e[C": forward-word
+"\e\e[D": backward-word
