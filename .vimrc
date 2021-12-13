@@ -66,6 +66,9 @@ imap <Esc>h <Left>
 imap <Esc>j <Esc>l<Down>
 imap <Esc>k <Esc>l<Up>
 
+" copy a word above and paste it at the current position
+inoremap <expr> <C-Y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\\|.\)')
+
 " insert new line in normal mode
 nmap <Enter> o<Esc>
 
@@ -114,15 +117,9 @@ nmap <F4> :set list!<Bar>set list?<CR>
 " remove line without copying
 nnoremap <Leader>d "_d
 
-" copy a word above and paste it at the current position
-inoremap <expr> <C-Y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\\|.\)')
-
-" eliminate delay on ESC
-augroup FastEscape
-  autocmd!
-  autocmd InsertEnter * set timeoutlen=0
-  autocmd InsertLeave * set timeoutlen=1000
-augroup END
+" shift line and keep selected text
+vmap > :><CR>gv
+vmap < :<<CR>gv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ abbreviations
@@ -140,6 +137,13 @@ autocmd FileWritePre    * :call TrimWhiteSpace()
 autocmd FileAppendPre   * :call TrimWhiteSpace()
 autocmd FilterWritePre  * :call TrimWhiteSpace()
 autocmd BufWritePre     * :call TrimWhiteSpace()
+
+" eliminate delay on ESC
+augroup FastEscape
+  autocmd!
+  autocmd InsertEnter * set timeoutlen=0
+  autocmd InsertLeave * set timeoutlen=1000
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ plugins
