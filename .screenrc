@@ -1,8 +1,0 @@
-startup_message off
-vbell on
-vbell_msg "RING! RING!"
-defscrollback 2000
-caption always
-hardstatus alwayslastline
-hardstatus string "%{= kg} [ %H ] %=[ %Y/%m/%d  %c:%s ]"
-caption string "%{= Kw}  %-Lw [%{=B kg} %50>%n %t %{-}]  %+Lw%<  %{= Kg} "
