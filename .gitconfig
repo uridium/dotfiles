@@ -22,8 +22,8 @@
     dfw = diff --word-diff
     dt = difftool --dir-diff
     mt = mergetool
-    lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#E0646C")%G? %an%Creset%C("#FFD24D")%d%Creset | %s'
-    sh = show --date=iso --pretty=format:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#858661")%GG %an <%ae>%Creset%C("#FFD24D")%d%Creset | %s'
+    lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an%Creset |%Creset%C("#FFD24D")%d%Creset %s'
+    sh = show --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an <%ae>%Creset |%Creset%C("#FFD24D")%d%Creset %B'
     tags = !git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate:iso)  %(refname:lstrip=2) %(else)%(*committerdate:iso)  %(refname:lstrip=2) %09  %(taggeremail) %(subject)%(end)' refs/tags | sort
 [diff]
     tool = meld
