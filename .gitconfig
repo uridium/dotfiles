@@ -19,6 +19,7 @@
     df = diff # not-staged
     dfs = diff --staged # staged
     dfa = status -vv # staged and not-staged
+    dfw = diff --word-diff
     dt = difftool --dir-diff
     mt = mergetool
     lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#E0646C")%G? %an%Creset%C("#FFD24D")%d%Creset | %s'
