@@ -23,7 +23,6 @@
     dt = difftool --dir-diff
     mt = mergetool
     lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#E0646C")%G? %an%Creset%C("#FFD24D")%d%Creset | %s'
-    lgs = log --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#E0646C")%G? %an%Creset%C("#FFD24D")%d%Creset | %s' --graph
     sh = show --date=iso --pretty=format:'%C("#858661")%h%Creset | %C("#858661")%ad %C("#858661")%GG %an <%ae>%Creset%C("#FFD24D")%d%Creset | %s'
     tags = !git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate:iso)  %(refname:lstrip=2) %(else)%(*committerdate:iso)  %(refname:lstrip=2) %09  %(taggeremail) %(subject)%(end)' refs/tags | sort
 [diff]
