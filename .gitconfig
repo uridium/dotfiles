@@ -10,20 +10,20 @@
 [alias]
     adp = add --patch
     adu = add --update
-    st = status
-    ci = commit
     co = checkout
     br = branch
     bra = branch --all -vv
+    ci = commit
     cl = clone --recursive
     df = diff # not-staged
-    dfs = diff --staged # staged
     dfa = status -vv # staged and not-staged
+    dfs = diff --staged # staged
     dfw = diff --word-diff
     dt = difftool --dir-diff
-    mt = mergetool
     lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an%Creset |%Creset%C("#FFD24D")%d%Creset %s'
+    mt = mergetool
     sh = show --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an <%ae>%Creset |%Creset%C("#FFD24D")%d%Creset %B'
+    st = status
     tags = !git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate:iso)  %(refname:lstrip=2) %(else)%(*committerdate:iso)  %(refname:lstrip=2) %09  %(taggeremail) %(subject)%(end)' refs/tags | sort
 [diff]
     tool = meld
