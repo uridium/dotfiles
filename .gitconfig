@@ -3,6 +3,8 @@
     excludesfile = ~/.gitignore
 [user]
     signingkey = 28D5ECB23C0ABE4DEAB241DDE79ABEBBDC15A429
+[init]
+    defaultBranch = master
 [commit]
     gpgsign = true
 [status]
