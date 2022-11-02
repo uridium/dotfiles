@@ -37,6 +37,7 @@
 [difftool "meld"]
     cmd = meld $LOCAL $REMOTE
 [merge]
+    ff = false
     log = true
     tool = meld
     conflictstyle = diff3
