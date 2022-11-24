@@ -22,7 +22,7 @@
     dfw = diff --word-diff
     dt = difftool
     genci = "!f() { br=$(git branch --show-current); for i in $(seq $1); do msg=$(curl -Ls https://whatthecommit.com/index.txt); echo ${msg} >>$br; git add $br; git commit -m \"$msg\"; done }; f"
-    lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an%Creset |%Creset%C("#FFD24D")%d%Creset %s'
+    lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%an%Creset |%Creset%C("#FFD24D")%d%Creset %s'
     ls = ls-tree --name-only -r
     mt = mergetool
     sh = show --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an <%ae>%Creset |%Creset%C("#FFD24D")%d%Creset %B'
