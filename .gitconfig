@@ -28,7 +28,7 @@
     sh = show --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an <%ae>%Creset |%Creset%C("#FFD24D")%d%Creset %B'
     st = status
     sw = switch
-    tags = "!git for-each-ref --format='%(if)%(committerdate)%(then)%(committerdate:iso)  %(refname:lstrip=2) %(else)%(*committerdate:iso)  %(refname:lstrip=2) %09  %(taggeremail) %(subject)%(end)' refs/tags | sort"
+    tags = log --no-walk --tags --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%an%Creset |%Creset%C("#FFD24D")%d%Creset %s'
 [diff]
     tool = meld
     mnemonicPrefix = true
