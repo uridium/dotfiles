@@ -20,8 +20,8 @@
     dfa = status -vv # staged and not-staged
     dfs = diff --staged # staged
     dfw = diff --word-diff
-    dt = difftool --dir-diff
     genci = "!f() { br=$(git branch --show-current); for i in $(seq $1); do msg=$(curl -s http://whatthecommit.com/index.txt); echo ${msg} >>$br; git add $br; git commit -m \"$msg\"; done }; f"
+    dt = difftool
     lg = log --reverse --date=iso --pretty=tformat:'%C("#858661")%h%Creset | %C("#858661")%ad%Creset | %C("#E0646C")%G?%Creset | %C("#E0646C")%an%Creset |%Creset%C("#FFD24D")%d%Creset %s'
     ls = ls-tree --name-only -r
     mt = mergetool
