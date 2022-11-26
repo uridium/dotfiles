@@ -50,6 +50,7 @@
     ff = only
 [push]
     followTags = true
+    recurseSubmodules = check
 [rebase]
     abbreviateCommands = true
     instructionFormat = | %ad  %an | %s
