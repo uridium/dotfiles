@@ -4,6 +4,8 @@
 .vagrant
 *.egg-info
 .eggs/
+.vim/bundle/*
+!.vim/bundle/Vundle.vim/
 build/
 dist/
 .DS_Store
