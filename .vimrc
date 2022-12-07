@@ -153,6 +153,8 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+" to install plugins from cli run:
+" vim +PluginInstall +qall
 Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
