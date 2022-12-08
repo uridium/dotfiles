@@ -47,7 +47,7 @@
 [mergetool "meld"]
     cmd = meld $LOCAL $MERGED $REMOTE --output $MERGED
 [pull]
-    ff = only
+    rebase = true
 [push]
     followTags = true
     recurseSubmodules = check
