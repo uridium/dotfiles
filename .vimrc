@@ -181,9 +181,10 @@ let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_section_c = airline#section#create(['%{hostname()}:%F'])
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#fnamemod = ':h'
 let g:airline#extensions#tabline#buffer_min_count = 2
 let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#formatter = 'short_path'
 
 nmap <Space>1 <Plug>AirlineSelectTab1
 nmap <Space>2 <Plug>AirlineSelectTab2
