@@ -3,10 +3,10 @@ export GIT_PS1_SHOWDIRTYSTATE=true          # unstaged (*), staged (+)
 export GIT_PS1_SHOWSTASHSTATE=true          # stashed ($)
 export GIT_PS1_SHOWUNTRACKEDFILES=true      # untracked (%)
 export GREP_COLORS='ms=01;34:mc=01;34:sl=:cx=:fn=35:ln=32:bn=32:se=36'
-export HISTSIZE='1000'
-export HISTFILESIZE='1000'
-export HISTTIMEFORMAT='%Y%m%d %T   '
 export HISTCONTROL='ignoreboth:erasedups'
+export HISTFILESIZE='1000'
+export HISTSIZE='1000'
+export HISTTIMEFORMAT='%Y%m%d %T   '
 export LESS_TERMCAP_md=$'\E[01;31m'         # Start bold mode
 export LESS_TERMCAP_me=$'\E[0m'             # End all mode like so, us, mb, md and mr
 export LESS_TERMCAP_ue=$'\E[0m'             # End underlining
