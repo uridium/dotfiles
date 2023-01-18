@@ -53,17 +53,7 @@ alias agrp='apt-get -V remove --purge'
 alias agap='apt-get -V autoremove --purge'
 alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".deb" | cut -d "_" -f 1)'
 
-# aws specific
-alias aws-ami-id="curl -w '\n' http://169.254.169.254/latest/meta-data/ami-id"
-alias aws-instance-id="curl -w '\n' http://169.254.169.254/latest/meta-data/instance-id"
-alias aws-instance-type="curl -w '\n' http://169.254.169.254/latest/meta-data/instance-type"
-alias aws-local-ipv4="curl -w '\n' http://169.254.169.254/latest/meta-data/local-ipv4"
-alias aws-public-ipv4="curl -w '\n' http://169.254.169.254/latest/meta-data/public-ipv4"
-alias aws-security-groups="curl -w '\n' http://169.254.169.254/latest/meta-data/security-groups"
-alias aws-user-data="curl -w '\n' http://169.254.169.254/latest/user-data"
-
 # autocomplete
-complete -C aws_completer aws
 complete -C terraform terraform
 
 # turning off email info
