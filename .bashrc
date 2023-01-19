@@ -7,10 +7,13 @@ export HISTCONTROL='ignoreboth:erasedups'
 export HISTFILESIZE='1000'
 export HISTSIZE='1000'
 export HISTTIMEFORMAT='%Y%m%d %T   '
-export LESS_TERMCAP_md=$'\E[01;31m'         # Start bold mode
-export LESS_TERMCAP_me=$'\E[0m'             # End all mode like so, us, mb, md and mr
-export LESS_TERMCAP_ue=$'\E[0m'             # End underlining
-export LESS_TERMCAP_us=$'\E[01;32m'         # Start underlining
+export LESS_TERMCAP_mb=$'\E[01;31m'         # begin blinking
+export LESS_TERMCAP_md=$'\E[01;31m'         # begin bold
+export LESS_TERMCAP_me=$'\E[0m'             # end all mode like so, us, mb, md and mr
+export LESS_TERMCAP_se=$'\E[0m'             # end standout-mode
+export LESS_TERMCAP_so=$'\E[01;44;37m'      # begin standout-mode
+export LESS_TERMCAP_ue=$'\E[0m'             # end underlining
+export LESS_TERMCAP_us=$'\E[01;32m'         # start underlining
 export LS_OPTIONS='--color=auto --hide-control-chars --classify'
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PROMPT_COMMAND='echo "$USER  $(history 1 | cut -c8-)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
