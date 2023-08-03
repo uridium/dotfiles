@@ -155,6 +155,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " to install plugins from cli run:
 " vim +PluginInstall +qall
+Plugin 'hashivim/vim-terraform'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -230,3 +231,6 @@ let g:indentLine_color_term = 239
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
 " let g:indentLine_setConceal = 0
+"
+let g:terraform_fmt_on_save = 1
+let g:terraform_align = 1
