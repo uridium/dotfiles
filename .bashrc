@@ -58,6 +58,8 @@ alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".d
 
 # autocomplete
 complete -C terraform terraform
+complete -C aws_completer aws
+source <(gopass completion bash)
 
 # turning off email info
 shopt -u mailwarn
