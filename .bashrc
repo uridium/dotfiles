@@ -18,6 +18,12 @@ export LS_OPTIONS='--color=auto --hide-control-chars --classify'
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PROMPT_COMMAND='echo "$USER  $(history 1 | cut -c8-)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
 export PS1='\[\e[1;38;5;15m\][ \t ] \[\e[1;38;5;88m\]$(__env_ps1 2>/dev/null)\[\e[1;38;5;242m\]\H:\[\e[1;38;5;15m\]\w\[\e[1;38;5;242m\]$(__git_ps1 2>/dev/null)\[\e[1;38;5;15m\] \$ \[\e[0m\]'
+export AWS_VAULT_BACKEND='pass'
+export AWS_VAULT_PASS_CMD='gopass'
+export AWS_VAULT_PASS_PASSWORD_STORE_DIR='~/.local/share/gopass/stores/root'
+export AWS_VAULT_PASS_PREFIX='aws'
+export AWS_ASSUME_ROLE_TTL='8h'
+export AWS_SESSION_TOKEN_TTL='8h'
 
 alias ..='cd ..'
 alias ...='cd ../..'
