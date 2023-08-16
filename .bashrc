@@ -22,8 +22,6 @@ export AWS_VAULT_BACKEND='pass'
 export AWS_VAULT_PASS_CMD='gopass'
 export AWS_VAULT_PASS_PASSWORD_STORE_DIR='~/.local/share/gopass/stores/root'
 export AWS_VAULT_PASS_PREFIX='aws'
-export AWS_ASSUME_ROLE_TTL='8h'
-export AWS_SESSION_TOKEN_TTL='8h'
 
 alias ..='cd ..'
 alias ...='cd ../..'
