@@ -230,8 +230,8 @@ let g:indentLine_fileType = []
 let g:indentLine_color_term = 239
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
-" let g:indentLine_setConceal = 0
-"
+let g:markdown_syntax_conceal=0
+
 " terraform
 let g:terraform_fmt_on_save = 1
 let g:terraform_align = 1
