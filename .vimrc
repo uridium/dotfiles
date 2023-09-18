@@ -215,7 +215,7 @@ autocmd FileType make setlocal noexpandtab
 
 autocmd BufEnter *.pp,*.erb setfiletype ruby
 autocmd BufEnter *.json,*.j2 setfiletype javascript
-autocmd BufEnter *.tf,*.tfvars setfiletype tf
+autocmd BufEnter *.tf,*.tfvars,*.tfvar setfiletype terraform
 autocmd BufEnter Jenkinsfile,*Jenkinsfile,Jenkinsfile* setfiletype groovy
 
 " easy align
