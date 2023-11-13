@@ -85,8 +85,8 @@ nmap ii i<Space><Esc>r
 
 " save/quit with Tab
 nmap <Tab>q :q!<CR>
-nmap <Tab>w :wa<CR>
-nmap qw :wqa<CR>
+nmap <Tab>w :wa!<CR>
+nmap qw :wqa!<CR>
 
 " clear highlightet searches
 nmap <Leader>c :let @/=""<CR>
