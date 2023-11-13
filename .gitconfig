@@ -50,6 +50,8 @@
     rebase = true
 [push]
     followTags = true
+    autoSetupRemote = true
+    default = current
     recurseSubmodules = check
 [rebase]
     abbreviateCommands = true
