@@ -88,7 +88,7 @@ nmap <Tab>q :q!<CR>
 nmap <Tab>w :wa!<CR>
 nmap qw :wqa!<CR>
 
-" clear highlightet searches
+" clear highlighted searches
 nmap <Leader>c :let @/=""<CR>
 
 " close active buffer
