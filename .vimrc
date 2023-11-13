@@ -155,6 +155,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 " to install plugins from cli run:
 " vim +PluginInstall +qall
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-commentary'
