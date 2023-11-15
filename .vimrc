@@ -88,11 +88,14 @@ nmap <Tab>q :q!<CR>
 nmap <Tab>w :w<CR>
 nmap qw :wq<CR>
 
-" clear highlighted searches
-nmap <Leader>c :let @/=""<CR>
+" save all buffers
+nmap <Leader><Tab>w :bufdo w<CR>
 
 " close active buffer
 nmap <Leader>bd :bd!<CR>
+
+" clear highlighted searches
+nmap <Leader>c :let @/=""<CR>
 
 " switch between open buffers
 nmap <Space>] :bn<CR>
