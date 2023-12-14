@@ -117,6 +117,9 @@ nmap <F3> :IndentLinesToggle<CR>:LeadingSpaceToggle<CR>
 " toggle tabs, trailing spaces and line endings
 nmap <F4> :set list!<Bar>set list?<CR>
 
+" format json
+nmap <F5> :%!jq<CR>
+
 " remove line without copying
 nnoremap <Leader>d "_d
 
