@@ -43,6 +43,7 @@ alias rm='rm -i'
 alias sd='sudo -Es'
 alias tcpdump='tcpdump -s0 -nnv'
 alias tree='tree -pugalhCD --timefmt "%Y%m%d %H:%M:%S"'
+alias xcl='xclip -sel clip'
 alias v='vim'
 alias vr='vim -R'
 
