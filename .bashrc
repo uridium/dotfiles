@@ -25,6 +25,7 @@ export AWS_VAULT_PASS_PREFIX='aws'
 
 alias ..='cd ..'
 alias ...='cd ../..'
+alias cdg='cd $(git rev-parse --show-toplevel)'
 alias cp='cp -i'
 alias df='df -Th'
 alias diff='colordiff -u'
