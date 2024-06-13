@@ -214,8 +214,8 @@ autocmd FileType lua setlocal commentstring=\--\ %s
 autocmd FileType groovy setlocal commentstring=\//\ %s
 autocmd FileType javascript setlocal commentstring=\//\ %s
 autocmd FileType tex setlocal commentstring=\%\ %s
-autocmd FileType yaml setlocal tabstop=2 shiftwidth=2
-autocmd FileType javascript setlocal tabstop=2 shiftwidth=2
+autocmd FileType javascript setlocal tabstop=4 shiftwidth=4
+autocmd FileType python setlocal tabstop=4 shiftwidth=4
 autocmd FileType make setlocal noexpandtab
 autocmd BufEnter *.pp,*.erb setfiletype ruby
 autocmd BufEnter *.json,*.j2 setfiletype javascript
