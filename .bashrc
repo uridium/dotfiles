@@ -18,10 +18,6 @@ export LS_OPTIONS='--color=auto --hide-control-chars --classify'
 export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 export PROMPT_COMMAND='echo "$USER  $(history 1 | cut -c8-)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
 export PS1='\[\e[1;38;5;15m\][ \t ] \[\e[1;38;5;88m\]$(__awsenv_ps1 2>/dev/null)\[\e[1;38;5;242m\]\H:\[\e[1;38;5;15m\]\w\[\e[1;38;5;242m\]$(__git_ps1 2>/dev/null)\[\e[1;38;5;15m\] \$ \[\e[0m\]'
-export AWS_VAULT_BACKEND='pass'
-export AWS_VAULT_PASS_CMD='gopass'
-export AWS_VAULT_PASS_PASSWORD_STORE_DIR='~/.local/share/gopass/stores/root'
-export AWS_VAULT_PASS_PREFIX='aws'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -41,7 +37,6 @@ alias ps='ps --headers af -eo "user:16 pid %cpu %mem nice stat lstart:32 etime:1
 alias rm='rm -i'
 alias sd='sudo -Es'
 alias tree='tree -pugalhCD --timefmt "%Y%m%d %H:%M:%S"'
-alias xcl='xclip -sel clip'
 alias v='vim'
 alias vr='vim -R'
 
@@ -61,7 +56,6 @@ alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".d
 
 # autocomplete
 complete -C terraform terraform
-complete -C aws_completer aws
 source <(gopass completion bash)
 
 # turning off email info
@@ -76,13 +70,6 @@ function acs() {
 # combing through eternal history
 function eh() {
     grep -i -h $@ $HOME/.bash_eternal_history/.bash*
-}
-
-# passing aws-vault environment name to PS1
-function __awsenv_ps1() {
-    if [[ ! -z "$AWS_VAULT" ]]; then
-        echo "<$AWS_VAULT> "
-    fi
 }
 
 # ruby apps
