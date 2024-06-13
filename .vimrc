@@ -120,8 +120,9 @@ nmap <F4> :set list!<Bar>set list?<CR>
 " format json
 nmap <F5> :%!jq<CR>
 
-" remove line without copying
-nnoremap <Leader>d "_d
+" paste from the yank register (disregard dd)
+nnoremap p "0p
+nnoremap P "0P
 
 " shift line and keep selected text
 vmap > :><CR>gv
