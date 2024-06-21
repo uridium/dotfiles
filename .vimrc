@@ -49,6 +49,9 @@ set hidden
 " start scrolling when the cursor is X lines from the top/bottom of the screen
 set scrolloff=1
 
+" if a line ends with an opening parenthesis, the next line adds indentation
+set smartindent
+
 " turn on color syntax highlighting
 syntax on
 
