@@ -154,13 +154,14 @@ augroup END
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 """ plugins
 " vundle
+" installing plugins:
+" vim +PluginInstall +qall
 set nocompatible
-filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
+filetype off
+
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-" to install plugins from cli run:
-" vim +PluginInstall +qall
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'hashivim/vim-terraform'
 Plugin 'junegunn/vim-easy-align'
@@ -170,7 +171,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'yggdroot/indentLine'
 call vundle#end()
-filetype plugin indent on
+
+filetype plugin on
 
 " airline
 if !exists('g:airline_symbols')
