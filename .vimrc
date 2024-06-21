@@ -121,7 +121,7 @@ nmap <F4> :set list!<Bar>set list?<CR>
 nmap <F5> :%!jq<CR>
 
 " remove line without copying
-nnoremap <Leader>d "_d
+nnoremap <Leader>d "_dd
 
 " shift line and keep selected text
 vmap > :><CR>gv
