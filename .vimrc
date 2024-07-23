@@ -120,6 +120,9 @@ nmap <F3> :IndentLinesToggle<CR>:LeadingSpaceToggle<CR>
 " toggle tabs, trailing spaces and line endings
 nmap <F4> :set list!<Bar>set list?<CR>
 
+" toggle line wrap
+nmap <F5> :set wrap!<Bar>set wrap?<CR>
+
 " format json
 nmap <F5> :%!jq<CR>
 
