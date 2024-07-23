@@ -129,6 +129,9 @@ nmap <F6> :%!jq<CR>
 " remove line without copying
 nnoremap <Leader>d "_dd
 
+" disregard copying when pasting in visual mode
+vnoremap p "0p
+
 " shift line and keep selected text
 vmap > :><CR>gv
 vmap < :<<CR>gv
