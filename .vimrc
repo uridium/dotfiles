@@ -124,7 +124,7 @@ nmap <F4> :set list!<Bar>set list?<CR>
 nmap <F5> :set wrap!<Bar>set wrap?<CR>
 
 " format json
-nmap <F5> :%!jq<CR>
+nmap <F6> :%!jq<CR>
 
 " remove line without copying
 nnoremap <Leader>d "_dd
