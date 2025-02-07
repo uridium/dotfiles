@@ -129,6 +129,9 @@ nmap <F6> :%!jq<CR>
 " remove line without copying
 nnoremap <Leader>d "_dd
 
+" don't jump to the next match
+nnoremap * *``
+
 " disregard copying when pasting in visual mode
 vnoremap p "0p
 
