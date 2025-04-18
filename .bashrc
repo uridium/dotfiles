@@ -54,10 +54,6 @@ alias agrp='apt-get -V remove --purge'
 alias agap='apt-get -V autoremove --purge'
 alias agclean='apt-get -V remove --purge $(ls /var/cache/apt/archives | grep ".deb" | cut -d "_" -f 1)'
 
-# autocomplete
-complete -C terraform terraform
-source <(gopass completion bash)
-
 # turning off email info
 shopt -u mailwarn
 unset MAILCHECK
