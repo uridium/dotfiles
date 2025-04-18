@@ -68,6 +68,12 @@ function eh() {
     grep -i -h $@ $HOME/.bash_eternal_history/.bash*
 }
 
+# pasting with ctrl+v, shift+ins, middle-click
+function cpy() {
+    cat $1 | xsel --clipboard
+    cat $1 | xsel --primary
+}
+
 # ruby apps
 if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
