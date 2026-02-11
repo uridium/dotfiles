@@ -15,7 +15,7 @@ export LESS_TERMCAP_so=$'\E[01;44;37m'      # begin standout-mode
 export LESS_TERMCAP_ue=$'\E[0m'             # end underlining
 export LESS_TERMCAP_us=$'\E[01;32m'         # start underlining
 export LS_OPTIONS='--color=auto --hide-control-chars --classify'
-export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.npm/bin:$PATH"
 export PROMPT_COMMAND='echo "$USER  $(history 1 | cut -c8-)" >>~/.bash_eternal_history/.bash_eternal_history-$(date +%Y%m)'
 export PS1='\[\e[1;38;5;15m\][ \t ] \[\e[1;38;5;88m\]$(__awsenv_ps1 2>/dev/null)\[\e[1;38;5;242m\]\H:\[\e[1;38;5;15m\]\w\[\e[1;38;5;242m\]$(__git_ps1 2>/dev/null)\[\e[1;38;5;15m\] \$ \[\e[0m\]'
 
