@@ -1,3 +1,9 @@
+export AWS_VAULT_BACKEND='pass'
+export AWS_VAULT_PASS_CMD='gopass'
+export AWS_VAULT_PASS_PASSWORD_STORE_DIR="$HOME/.local/share/gopass/stores/root"
+export AWS_VAULT_PASS_PREFIX='aws'
+export AWS_SESSION_TOKEN_TTL='8h'
+export AWS_ASSUME_ROLE_TTL='8h'
 export EDITOR='vim'
 export GIT_PS1_SHOWDIRTYSTATE=true          # unstaged (*), staged (+)
 export GIT_PS1_SHOWSTASHSTATE=true          # stashed ($)
